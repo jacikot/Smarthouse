@@ -1,0 +1,56 @@
+-- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: smarthouse
+-- ------------------------------------------------------
+-- Server version	8.0.22
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `pustena`
+--
+
+DROP TABLE IF EXISTS `pustena`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pustena` (
+  `idPust` int NOT NULL AUTO_INCREMENT,
+  `idU` int NOT NULL,
+  `idP` int NOT NULL,
+  PRIMARY KEY (`idPust`),
+  KEY `idP_pesma_idx` (`idP`),
+  KEY `idU_user_idx` (`idU`),
+  CONSTRAINT `idP_pesma` FOREIGN KEY (`idP`) REFERENCES `pesma` (`idP`) ON UPDATE CASCADE,
+  CONSTRAINT `idU_user` FOREIGN KEY (`idU`) REFERENCES `user` (`idU`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=458 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pustena`
+--
+
+LOCK TABLES `pustena` WRITE;
+/*!40000 ALTER TABLE `pustena` DISABLE KEYS */;
+INSERT INTO `pustena` VALUES (405,1,16),(406,1,9),(407,1,9),(408,1,9),(409,1,9),(410,1,9),(411,1,9),(412,1,9),(413,1,9),(414,1,9),(415,1,9),(416,1,9),(417,1,9),(418,1,9),(419,1,9),(420,1,9),(421,1,9),(422,1,9),(423,1,9),(424,1,9),(425,1,9),(426,1,9),(427,1,9),(428,1,9),(429,1,9),(430,1,9),(431,1,9),(432,1,9),(433,1,9),(434,1,9),(435,1,9),(436,1,9),(437,1,9),(438,1,9),(439,1,9),(440,1,9),(441,1,9),(442,1,9),(443,1,9),(444,1,9),(445,1,9),(446,1,9),(447,1,9),(448,1,9),(449,1,9),(450,1,9),(451,1,9),(452,1,9),(453,1,9),(454,1,9),(455,1,17),(456,1,9),(457,1,9);
+/*!40000 ALTER TABLE `pustena` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-02-26  1:28:17
